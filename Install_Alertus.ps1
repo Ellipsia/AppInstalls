@@ -1,23 +1,30 @@
 ﻿$applicationlist =@("*Alertus*")
 $results = @()
-$classesreglocation = @("HKLM:Software\Classes\Installer\Products")
+$classesreglocation = "HKLM:Software\Classes\Installer\Products"
 $uninstreglocations = @("HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall","HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall")
 $MSI = "alertus-desktopAlert_DotNet4.5_v5.3.3.0.msi"
 $InstallPath = "`"" + $PSScriptRoot + "\$MSI" + "`""
 $logs = "`"C:\Windows\Temp\Alertus.log`""
+$CurrentFaultyInstall = "6B34A75E1C25A74488D065EE7D98D06B"
 
 $MSIArguments = @(
     '/i'
     $InstallPath
-    '/qn'    
+    '/qb'    
     '/L*v'
     $logs
     'REBOOT=REALLYSUPPRESS'
     )
 
 Try{
+    #Seems that if it failed before it cannot rerun because it detects the registry key for the current version
+    If ($classesreglocation + "\" + $CurrentFaultyInstall){
+        Remove-Item ($classesreglocation + "\" + $CurrentFaultyInstall) -Recurse -Force -ErrorAction SilentlyContinue
+    }
+
     #Try install, if fail clean up registry of older version 
-    $Install = Start-Process "msiexec.exe" -ArgumentList $MSIArguments  -Wait -NoNewWindow -ErrorAction Stop -PassThru
+    Stop-Process -Name "msi*" -Force -ErrorAction SilentlyContinue
+    $Install = Start-Process "msiexec.exe" -ArgumentList $MSIArguments -Wait -NoNewWindow -ErrorAction Stop -PassThru
     
     if ($Install.ExitCode -ne 0){
         Write-Host "Install failed"
