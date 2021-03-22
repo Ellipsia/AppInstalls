@@ -10,7 +10,7 @@ $CurrentFaultyInstall = "6B34A75E1C25A74488D065EE7D98D06B"
 $MSIArguments = @(
     '/i'
     $InstallPath
-    '/qb'    
+    '/qn'    
     '/L*v'
     $logs
     'REBOOT=REALLYSUPPRESS'
