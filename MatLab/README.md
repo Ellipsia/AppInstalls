@@ -5,23 +5,23 @@ MatLab VHD and PowerShell Installer
 Prepping the VHD
 1. Get license key string to add to the installer_input.txt from previous years package.
 	a. fileInstallationKey=<Key from software services>
-2. Usually take old installer_input.txt and just modify it to current version with key, log path, and licensepath.  If this is not possible, the follow changes are made 	to the file:
-	a. destinationFolder=C:\Program Files\MATLAB\<Version>
-	b. fileInstallationKey=<Key from software services>
-	c. agreeToLicense=yes
-	d. outputFile=C:\Windows\Temp\MATLAB-<version>.log
-	e. mode=silent
-	f. licensePath=C:\Program Files\MATLAB\<version>\license.dat
-	g. lmgrFiles=false
-	h. lmgrService=false
-	i. desktopShortcut=false
-	j. startMenuShortcut=true
-	k. createAccelTask=false
-	l. enableLNU=no
+2. Usually take old installer_input.txt and just modify it to current version with key, log path, and licensepath.  If this is not possible, the follow changes are made to the file:
+	1. destinationFolder=C:\Program Files\MATLAB\<Version>
+	2. fileInstallationKey=<Key from software services>
+	3. agreeToLicense=yes
+	4. outputFile=C:\Windows\Temp\MATLAB-<version>.log
+	5. mode=silent
+	6. licensePath=C:\Program Files\MATLAB\<version>\license.dat
+	7. lmgrFiles=false
+	8. lmgrService=false
+	9. desktopShortcut=false
+	10. startMenuShortcut=true
+	11. createAccelTask=false
+	12. enableLNU=no
 3. Copy old uninstaller_input.txt from previous year and put it in the root folder, if not, add following lines:
-	a. outputFile=C:\Windows\Temp\MATLAB_Uninstall.log
-	b. mode=silent
-	c. prefs=True
+	1. outputFile=C:\Windows\Temp\MATLAB_Uninstall.log
+	2. mode=silent
+	3. prefs=True
 4. Copy license.dat to main directory
 5. After this, create the below VHD
 
