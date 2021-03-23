@@ -3,27 +3,27 @@
 MatLab VHD and PowerShell Installer
 
 Prepping the VHD
-	1. Get license key string to add to the installer_input.txt from previous years package.
-		a. fileInstallationKey=<Key from software services>
-	2. Usually take old installer_input.txt and just modify it to current version with key, log path, and licensepath.  If this is not possible, the follow changes are made to the file:
-		a. destinationFolder=C:\Program Files\MATLAB\<Version>
-		b. fileInstallationKey=<Key from software services>
-		c. agreeToLicense=yes
-		d. outputFile=C:\Windows\Temp\MATLAB-<version>.log
-		e. mode=silent
-		f. licensePath=C:\Program Files\MATLAB\<version>\license.dat
-		g. lmgrFiles=false
-		h. lmgrService=false
-		i. desktopShortcut=false
-		j. startMenuShortcut=true
-		k. createAccelTask=false
-		l. enableLNU=no
-	3. Copy old uninstaller_input.txt from previous year and put it in the root folder, if not, add following lines:
-		a. outputFile=C:\Windows\Temp\MATLAB_Uninstall.log
-		b. mode=silent
-		c. prefs=True
-	4. Copy license.dat to main directory
-	5. After this, create the below VHD
+1. Get license key string to add to the installer_input.txt from previous years package.
+	a. fileInstallationKey=<Key from software services>
+2. Usually take old installer_input.txt and just modify it to current version with key, log path, and licensepath.  If this is not possible, the follow changes are made 	to the file:
+	a. destinationFolder=C:\Program Files\MATLAB\<Version>
+	b. fileInstallationKey=<Key from software services>
+	c. agreeToLicense=yes
+	d. outputFile=C:\Windows\Temp\MATLAB-<version>.log
+	e. mode=silent
+	f. licensePath=C:\Program Files\MATLAB\<version>\license.dat
+	g. lmgrFiles=false
+	h. lmgrService=false
+	i. desktopShortcut=false
+	j. startMenuShortcut=true
+	k. createAccelTask=false
+	l. enableLNU=no
+3. Copy old uninstaller_input.txt from previous year and put it in the root folder, if not, add following lines:
+	a. outputFile=C:\Windows\Temp\MATLAB_Uninstall.log
+	b. mode=silent
+	c. prefs=True
+4. Copy license.dat to main directory
+5. After this, create the below VHD
 
 Using a new methodology to install this application.
 
