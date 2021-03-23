@@ -1,4 +1,4 @@
-# MatLab
+# MatLab ConfigMgr PowerShell Installer
 
 MatLab VHD and PowerShell Installer
 
