@@ -1,0 +1,2 @@
+SERVER yourlicenseserver INTERNET=YourIP and Port 
+USE_SERVER port=2701
