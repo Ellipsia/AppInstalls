@@ -1,0 +1,2 @@
+REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Servicing" /v RepairContentServerSource /t REG_DWORD /d 2 /f
+Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online | Out-File "$env:SystemRoot\CCM\Logs\RSAT.log" -NoClobber -Append
