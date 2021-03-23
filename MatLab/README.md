@@ -4,7 +4,7 @@ MatLab VHD and PowerShell Installer
 
 Prepping the VHD
 1. Get license key string to add to the installer_input.txt from previous years package.
-	a. fileInstallationKey=<Key from software services>
+	1. fileInstallationKey=<Key from software services>
 2. Usually take old installer_input.txt and just modify it to current version with key, log path, and licensepath.  If this is not possible, the follow changes are made to the file:
 	1. destinationFolder=C:\Program Files\MATLAB\<Version>
 	2. fileInstallationKey=<Key from software services>
