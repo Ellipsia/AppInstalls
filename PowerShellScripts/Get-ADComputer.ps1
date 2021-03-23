@@ -1,0 +1,1 @@
+﻿Get-ADComputer -SearchBase "OU=YourOU,DC=YourDC" -Filter {OperatingSystem -like "Windows 10*"} -Property Name, OperatingSystemVersion,LastLogonDate,PasswordLastSet,DistinguishedName | Select Name,OperatingSystemVersion,LastLogonDate,PasswordLastSet,DistinguishedName | Export-Csv C:\Temp\CompByOS.csv -NoTypeInformation
