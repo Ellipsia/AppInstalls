@@ -7,12 +7,14 @@
     UPDATE INFO
 
     The QueryExpression is in the Windows Query Language (WQL) format.
+    
+    Make sure to change site code for collection creation
 .EXAMPLE
     UPDATE INFO
-   New-WWUDeviceCollection -CollectionName "There was a description here I removed"
+   New-PatchCollection -CollectionName "There was a description here I removed"
 .EXAMPLE
     UPDATE INFO
-   New-WWUDeviceCollection -CollectionName "There was a description here I removed"
+   New-PatchCollection -CollectionName "There was a description here I removed"
 #>
 
     [CmdletBinding()]
@@ -45,7 +47,7 @@
 
         [Parameter(Mandatory = $false,
                    HelpMessage="Destination collection path")]
-        [String]$CollectionPath = "WWU:\DeviceCollection\Deployments\Software Updates" #Default
+        [String]$CollectionPath = "SMS:\DeviceCollection\Deployments\Software Updates" #Default
 
     )
 
