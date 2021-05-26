@@ -7,6 +7,7 @@ foreach($location in $reglocations)
         foreach($application in $applicationlist)
         {
             $results += (Get-ChildItem -Path $location | Get-ItemProperty | Where-Object {$_.DisplayName -like $application} | Select-Object -Property DisplayName, PSChildName, Version)
+          
         }
     }
 
